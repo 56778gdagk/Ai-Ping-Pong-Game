@@ -1,0 +1,19 @@
+.heading h3{
+    font-size: 20px;
+    display: inline;
+    text-align: left;
+}
+
+.heading button{
+    border-style: solid dashed;
+    border-radius: 10px;
+    border-color: whitesmoke;
+    float: right;
+    margin: 0;
+    background-color:firebrick;
+}
+
+.heading{
+    width: 100%;
+    text-align: left;
+}
