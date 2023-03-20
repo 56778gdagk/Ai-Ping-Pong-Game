@@ -10,10 +10,27 @@
     border-color: whitesmoke;
     float: right;
     margin: 0;
-    background-color:firebrick;
+    color: black;
 }
 
 .heading{
     width: 100%;
     text-align: left;
+}
+
+.copy_right_footer{
+    text-align: center;
+    background-color: whitesmoke;
+    color: black;
+    bottom: 0;
+    position: sticky;
+    width: 100%;
+}
+
+ol{
+    background-color: blue;
+    color: whitesmoke;
+    font-weight: bold;
+    font-style: oblique;
+    font-size: 20px;
 }

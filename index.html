@@ -16,13 +16,43 @@
     <body background="background1.jpg">
         <center>
             <div class="btn btn-danger heading">
-                <h3>AI PING PONG GAME</h3>
-                <button  data-toggle="modal" data-target="#myModal">Instruction</button>
+                <h3>AI PING PONG GAME
+                    <button data-toggle="modal" data-target="#myModal">Instruction</button>
+                </h3>
+                
             </div>
-            <button class="btn btn-warning" id="start" onclick="statGame()">Play Game</button>
+            <button class="btn btn-warning" id="start" onclick="startGame()">Play Game</button>
             <h3 id="status"></h3>
             <div id="canvas"></div>
+            <button class="btn btn-primary" onclick="restart()">Restart</button>
+
+            <div id="myModal" class="modal fade">
+                <div class="modal-dialog">
+
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+
+                            <button class="close" data-dismiss="modal">&times;</button>
+
+                            <h4>Instructions</h4>
+
+                        </div>
+                        <div id="instructions">
+                            <ol>
+                                To move the paddel up move your nose up 
+                            </ol>
+                            <ol>
+                                To move the paddel down move your nose down
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </center>
+
+        <div class="copy_right_footer">Developed by - Mohammad Agaz Khan </div>
 
         <script src="main.js"></script>
     </body>
