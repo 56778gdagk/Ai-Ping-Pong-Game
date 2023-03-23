@@ -1,4 +1,6 @@
-
+rightWrist_x = "";
+rightWrist_y = "";
+rightWrist_score = "";
 /*created by prashant shukla */
 
 var paddle2 =10,paddle1=10;
@@ -30,6 +32,18 @@ function setup(){
   video.hide();
 }
 
+function gotResult(results)
+{
+  if(results.length > 0)
+  {
+    rightWrist_x = results[0].pose.rightWrist.x;
+    rightWrist_y = results[0].pose.rightWrist.y;   
+    rightWrist_score = results[0].keypoints.rightWrist.score;
+    console.log("right wrist x : " + rightWrist_x + " right wrist y : " + rightWrist_y + " score : " + rightWrist_score);
+    console.log(results);
+  }
+}
+
 
 function draw(){
 
@@ -38,6 +52,7 @@ function draw(){
  image(video,0,0,700,600);
 
  poseNet = ml5.poseNet(video, modelLoaded);
+ poseNet.on('pose', gotResult);
 
  fill("black");
  stroke("black");
@@ -46,6 +61,14 @@ function draw(){
  fill("black");
  stroke("black");
  rect(0,0,20,700);
+
+ if(rightWrist_score < 0.2)
+ {
+    fill("red");
+    stroke("black");
+    circle(rightWrist_x,rightWrist_y,30);
+    
+ }
  
    //funtion paddleInCanvas call 
    paddleInCanvas();
