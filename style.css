@@ -1,43 +1,41 @@
+
+.heading
+{
+width: 100%;
+text-align: left;
+}
 .heading h3{
-    font-size: 20px;
     display: inline;
-    text-align: left;
 }
 
 .heading button{
-    border-style: solid dashed;
-    border-radius: 10px;
-    border-color: whitesmoke;
     float: right;
-    margin: 0;
-    color: black;
+    border: 1px solid white;
 }
 
-.heading{
-    width: 100%;
+#start ,#status, #restart
+{
+font-size: 22px;
+}
+
+.modal-dialog
+{
+    width: 70%;
+}
+.modal-body
+{
     text-align: left;
-}
-
-.copy_right_footer{
-    text-align: center;
-    background-color: whitesmoke;
-    color: black;
-    bottom: 0;
-    position: sticky;
-    width: 100%;
-}
-
-ol{
-    background-color: blue;
-    color: whitesmoke;
-    font-weight: bold;
-    font-style: oblique;
     font-size: 20px;
 }
-
-canvas{
-    box-shadow: 5px 5px 5px blue;
-    border-radius: 10px;
-    border-style: solid;
-    border-color: black;
+h4
+{
+   background-color: grey;
+   color:white;
+   line-height: 2;
 }
+canvas 
+  {
+      border:3px solid white;
+      border-radius: 20px;
+      box-shadow:  5px 5px 5px white;
+  }
