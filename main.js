@@ -1,5 +1,6 @@
 
-
+ball_touch = "";
+ball_miss = "";
 
 var paddle2 =10,paddle1=10;
 
@@ -27,7 +28,10 @@ scoreRightWrist = 0;
 
 gameStatus = "";
 
- 
+function preload(){
+  ball_touch = loadSound("ball_touch_paddel.wav");
+  ball_miss = loadSound("missed.wav");
+}
 
 function setup(){
 var canvas =  createCanvas(700,600);
@@ -92,7 +96,7 @@ if(gameStatus == "start") // inside the if condition check if the game_status is
     fill(250,0,0);
     stroke(0,0,250);
     strokeWeight(0.5);
-    paddle1Y = rightWristY; 
+    paddle1Y = mouseY; 
     rect(paddle1X,paddle1Y,paddle1,paddle1Height,100);
 
 
@@ -121,6 +125,9 @@ if(gameStatus == "start") // inside the if condition check if the game_status is
 
 //function reset when ball does notcame in the contact of padde
 function reset(){
+  pcscore = 0;
+  playerscore = 0;
+  loop();
    ball.x = width/2+100,
    ball.y = height/2+100;
    ball.dx=3;
@@ -164,9 +171,9 @@ function move(){
        ball.dx=-ball.dx-0.5;       
    }
   if (ball.x-2.5*ball.r/2< 0){
-  if (ball.y >= paddle1Y&& ball.y <= paddle1Y + paddle1Height) {
+  if (ball.y >= paddle1Y&& ball.y <= rightWristY + paddle1Height) {
     ball.dx = -ball.dx+0.5; 
-    
+    ball_touch.play();
   }
   else{
     pcscore++;
@@ -183,12 +190,13 @@ if(pcscore ==4){
     stroke("white");
     textSize(25);
     text("Game Over!",width/2,height/2);
-    text("Reload the page!",width/2,height/2+30)
+    text("Press Restart button to restart the game again!",width/2,height/2+30)
     noLoop();
     pcscore = 0;
  }
    if(ball.y+ball.r > height || ball.y-ball.r <0){
        ball.dy =- ball.dy;
+       ball_miss.play();
    }   
 }
 
